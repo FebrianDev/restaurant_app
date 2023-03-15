@@ -6,7 +6,7 @@ import '../pages/detail_page.dart';
 class ItemRestaurant extends StatelessWidget {
   final Restaurant restaurant;
 
-  const ItemRestaurant(this.restaurant, {super.key});
+  const ItemRestaurant(this.restaurant);
 
   @override
   Widget build(BuildContext context) {
@@ -22,7 +22,7 @@ class ItemRestaurant extends StatelessWidget {
               context,
               MaterialPageRoute(
                 builder: (context) => DetailPage(
-                  restaurant,
+                  restaurant.id,
                 ),
               ),
             );
@@ -33,10 +33,16 @@ class ItemRestaurant extends StatelessWidget {
               ClipRRect(
                 borderRadius: BorderRadius.circular(4),
                 child: Image.network(
-                  restaurant.pictureId,
+                  "https://restaurant-api.dicoding.dev/images/small/${restaurant.pictureId}",
                   height: 88,
                   width: double.infinity,
                   fit: BoxFit.fitWidth,
+                  errorBuilder: (ctx, error, _) => const Center(
+                    child: Icon(
+                      Icons.error,
+                      size: 42,
+                    ),
+                  ),
                 ),
               ),
               Container(

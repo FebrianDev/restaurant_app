@@ -5,13 +5,18 @@ class Restaurant {
   final String pictureId;
   final String city;
   final num rating;
-  final dynamic menus;
 
   Restaurant(this.id, this.name, this.description, this.pictureId, this.city,
-      this.rating, this.menus);
+      this.rating);
 
   factory Restaurant.fromJson(Map<String, dynamic> json) {
-    return Restaurant(json["id"], json["name"], json["description"],
-        json["pictureId"], json["city"], json["rating"], json["menus"]);
+    return Restaurant(
+      json["id"],
+      json["name"],
+      json["description"],
+      json["pictureId"],
+      json["city"],
+      json["rating"],
+    );
   }
 }

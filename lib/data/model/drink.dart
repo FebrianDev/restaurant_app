@@ -1,4 +1,4 @@
-class Drink {
+class Drink{
   final String name;
 
   Drink(this.name);

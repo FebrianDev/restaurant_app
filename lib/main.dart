@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:restaurant_app/pages/detail_page.dart';
 import 'package:restaurant_app/pages/home_page.dart';
 
 void main() {
@@ -26,3 +27,4 @@ class MyApp extends StatelessWidget {
         home: HomePage());
   }
 }
+
